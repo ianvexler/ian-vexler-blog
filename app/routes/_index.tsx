@@ -44,19 +44,36 @@ export default function Index() {
         </div>
       </div>
 
-      <div className="w-100 bg-secondary px-4 d-flex mt-5 position-relative">
-        <div className='w-25 position-absolute about-me-img bg-warning' />
-
-        <div className="w-75 py-4" style={{ marginLeft: '25%' }}>
-          <div className="mx-5">
-            <h3>About me</h3>
-
-            <p className="mt-3">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+      <section className="about-section py-5 mt-5">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-lg-10 col-md-11">
+              <div className="about-card p-4 p-md-5 rounded-4">
+                <div className="row align-items-center">
+                  <div className="col-md-4 mb-4 mb-md-0 text-center">
+                    {/* TODO: Add image */}
+                    <p>Placeholder</p>
+                  </div>
+                  <div className="col-md-8">
+                    <h2 className="about-title mb-4">
+                      About Me
+                    </h2>
+                    <p className="about-text mb-4">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
+                      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                      exercitation ullamco laboris.
+                    </p>
+                    <p className="about-text mb-0">
+                      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
+                      fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <MyJourney />
     </div>

@@ -306,7 +306,23 @@ body {
   transform: translateX(-50%);
 }
 
-.about-me-img {
-  top: -10px;
-  bottom: -10px;
+// About section
+.about-section {
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.02) 50%, transparent 100%);
+}
+
+.about-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.about-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.about-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
 }
