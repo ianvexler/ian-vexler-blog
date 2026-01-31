@@ -3,7 +3,7 @@ import { Badge } from "react-bootstrap";
 import { Contact } from "~/components/home/contact";
 import { QuickLinks } from "~/components/home/intro";
 import { MyJourney } from "~/components/home/journey";
-import Projects from "~/components/home/Projects";
+import { Projects } from "../components/home/projects";
 
 export const meta: MetaFunction = () => {
   return [
