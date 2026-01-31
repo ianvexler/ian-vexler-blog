@@ -1,9 +1,11 @@
 @use 'styles/variables' as *;
 @use 'components/common/navbar/navbar';
+@use 'components/common/footer';
 @use 'components/home/intro/intro';
 @use 'components/home/about/about';
 @use 'components/home/journey/journey';
 @use 'components/home/projects/projects';
+@use 'components/home/contact/contact';
 
 @import "node_modules/bootstrap/scss/bootstrap";
 
@@ -18,10 +20,6 @@ body {
   padding-top: 70px;
 }
 
-footer {
-  color: black;
-  background-color: white;
-}
 
 a {
   color: inherit;

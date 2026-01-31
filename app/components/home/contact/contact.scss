@@ -1,0 +1,79 @@
+@use '../../../styles/variables' as *;
+
+.contact-section {
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact-title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.contact-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.linkedin-link {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+
+  i {
+    font-size: 1.25rem;
+    color: $accent;
+  }
+
+  &:hover {
+    color: white;
+    
+    i {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.contact-input {
+  background: #10161c;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: white;
+  padding: 0.875rem 1rem;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  &:focus {
+    background: #141c24;
+    border-color: rgba($accent, 0.4);
+    box-shadow: 0 0 0 3px rgba($accent, 0.1);
+    color: white;
+  }
+}
+
+.contact-textarea {
+  resize: none;
+}
+
+.btn-contact {
+  font-size: 1rem;
+  color: #0a0f14;
+  background: linear-gradient(135deg, $accent 0%, #f5cc4a 100%);
+  border: none;
+  box-shadow: 0 4px 20px rgba($accent, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba($accent, 0.4);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
