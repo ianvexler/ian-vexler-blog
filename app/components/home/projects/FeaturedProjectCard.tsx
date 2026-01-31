@@ -22,7 +22,6 @@ const FeaturedProjectCard = ({
   return (
     <div className="featured-card rounded-4 overflow-hidden">
       <div className="row g-0">
-        {/* Images */}
         <div className="col-lg-5">
           <div className="project-images d-flex align-items-center p-3 p-md-4 h-100">
             <div className="image-grid">
@@ -49,7 +48,6 @@ const FeaturedProjectCard = ({
           </div>
         </div>
 
-        {/* Content */}
         <div className="col-lg-7">
           <div className="p-4 p-md-5">
             <h3 className="fs-4 fw-semibold mb-3">{title}</h3>

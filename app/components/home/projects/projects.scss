@@ -1,4 +1,4 @@
-@use '../../styles/variables' as *;
+@use '../../../styles/variables' as *;
 
 .projects-section {
   background: rgba(255, 255, 255, 0.01);
@@ -136,6 +136,7 @@
   }
 }
 
+// Modal
 .project-modal {
   .modal-content {
     background: #0f151b;
@@ -154,6 +155,7 @@
   }
 }
 
+// Carousel
 .modal-carousel {
   position: relative;
 }

@@ -39,7 +39,6 @@ const ProjectModal = ({ project, show, onHide }: ProjectModalProps) => {
       
       <Modal.Body className="px-4 pb-4 pt-2">
         <div className="row g-4">
-          {/* Image Carousel */}
           {hasImages && (
             <div className="col-lg-5">
               <div className="modal-carousel rounded-3 overflow-hidden">
@@ -81,7 +80,6 @@ const ProjectModal = ({ project, show, onHide }: ProjectModalProps) => {
             </div>
           )}
 
-          {/* Content */}
           <div className={hasImages ? "col-lg-7" : "col-12"}>
             <p className="text-white-75 mb-4" style={{ lineHeight: 1.8 }}>
               {project.description}

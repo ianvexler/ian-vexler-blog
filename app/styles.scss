@@ -1,13 +1,12 @@
 @use 'styles/variables' as *;
 @use 'components/common/navbar/navbar';
-@use 'components/home/intro';
-@use 'components/home/about';
-@use 'components/home/journey';
-@use 'components/home/projects';
+@use 'components/home/intro/intro';
+@use 'components/home/about/about';
+@use 'components/home/journey/journey';
+@use 'components/home/projects/projects';
 
 @import "node_modules/bootstrap/scss/bootstrap";
 
-// ===== GLOBAL STYLES =====
 body {
   background-color: #0a0f14;
   font-family: 'Jost', system-ui, sans-serif;
@@ -29,7 +28,6 @@ a {
   text-decoration: none;
 }
 
-// ===== UTILITIES =====
 .min-vh-50 {
   min-height: 50vh;
 }
@@ -66,7 +64,6 @@ a {
   z-index: -1;
 }
 
-// ===== ANIMATIONS =====
 @keyframes fadeInUp {
   from {
     opacity: 0;

@@ -1,9 +1,8 @@
 import type { MetaFunction } from "@remix-run/node";
-import { Badge, Button } from "react-bootstrap";
-import ExperienceCard from "~/components/home/ExperienceCard";
-import MyJourney from "~/components/home/MyJourney";
-import Projects from "~/components/home/Projects";
-import QuickLinks from "~/components/home/QuickLinks";
+import { Badge } from "react-bootstrap";
+import { QuickLinks } from "~/components/home/intro";
+import { MyJourney } from "~/components/home/journey";
+import { Projects } from "~/components/home/projects";
 
 export const meta: MetaFunction = () => {
   return [
