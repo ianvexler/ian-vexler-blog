@@ -1,9 +1,12 @@
-$primary: #d4a018;
-$secondary: #00324b;
-$accent: #e8b923;
+@use 'styles/variables' as *;
+@use 'components/common/navbar/navbar';
+@use 'components/home/intro';
+@use 'components/home/about';
+@use 'components/home/journey';
 
 @import "node_modules/bootstrap/scss/bootstrap";
 
+// ===== GLOBAL STYLES =====
 body {
   background-color: #0a0f14;
   font-family: 'Jost', system-ui, sans-serif;
@@ -12,6 +15,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   color: white;
+  padding-top: 70px;
 }
 
 footer {
@@ -24,139 +28,13 @@ a {
   text-decoration: none;
 }
 
-// ===== NAVBAR STYLES =====
-.main-navbar {
-  z-index: 1000;
-  background: transparent;
-  backdrop-filter: blur(0);
-  -webkit-backdrop-filter: blur(0);
-  border-bottom: 1px solid transparent;
-  box-shadow: none;
-  transition: padding 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-
-  &.scrolled {
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
-    background: rgba(10, 15, 20, 0.9);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-  }
-}
-
-.navbar-logo {
-  transition: opacity 0.3s ease;
-
-  &:hover {
-    opacity: 0.8;
-  }
-
-  .logo-text {
-    background: linear-gradient(135deg, $accent 0%, #fff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-}
-
-.nav-item {
-  position: relative;
-  padding: 0.5rem 1rem;
-  color: rgba(255, 255, 255, 0.7);
-  transition: color 0.3s ease;
-
-  @media (max-width: 480px) {
-    padding: 0.5rem 0.6rem;
-    font-size: 0.85rem;
-  }
-
-  .underline {
-    position: absolute;
-    bottom: 0.3rem;
-    left: 50%;
-    transform: translateX(-50%) scaleX(0);
-    width: 20px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, $accent, transparent);
-    border-radius: 2px;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  &:hover {
-    color: white;
-
-    .underline {
-      transform: translateX(-50%) scaleX(1);
-    }
-  }
-
-  &.active {
-    color: white;
-
-    .underline {
-      transform: translateX(-50%) scaleX(1);
-      background: $accent;
-      width: 24px;
-    }
-  }
-}
-
-.navbar-cta {
-  font-size: 0.875rem;
-  color: #0a0f14;
-  background: linear-gradient(135deg, $accent 0%, #f5cc4a 100%);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 12px rgba($accent, 0.3);
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba($accent, 0.4);
-    color: #0a0f14;
-  }
-
-  &:active {
-    transform: translateY(0);
-  }
-}
-
-// Offset for fixed navbar
-body {
-  padding-top: 70px;
-}
-
-// Skills
-.skills-list {
-  max-width: 500px;
-  animation: fadeInUp 0.8s ease-out 0.5s both;
-}
-
-.skill-tag {
-  font-size: 0.85rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.75);
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 50px;
-  transition: all 0.3s ease;
-
-  &:hover {
-    background: rgba(180, 150, 50, 0.12);
-    border-color: rgba(180, 150, 50, 0.35);
-    color: white;
-  }
+// ===== UTILITIES =====
+.min-vh-50 {
+  min-height: 50vh;
 }
 
 .card-background {
   background-color: #24333cb2;
-}
-
-.experience-container {
-  width: 80%;
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
 }
 
 .home-intro-container {
@@ -169,105 +47,6 @@ body {
     margin-top: 25px;
     padding-right: 0 !important;
     padding-left: 0 !important;
-  }
-}
-
-.min-vh-50 {
-  min-height: 50vh;
-}
-
-// Intro section
-.intro {
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 100%;
-    background: radial-gradient(ellipse at center top, rgba($accent, 0.06) 0%, transparent 60%);
-    pointer-events: none;
-  }
-}
-
-.greeting {
-  letter-spacing: 0.2em;
-  animation: fadeInUp 0.8s ease-out both;
-}
-
-.name {
-  animation: fadeInUp 0.8s ease-out 0.15s both;
-  
-  .first-name {
-    background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.85) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  .last-name {
-    background: linear-gradient(135deg, $accent 0%, #f5cc4a 50%, $accent 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-}
-
-.title-row {
-  animation: fadeInUp 0.8s ease-out 0.3s both;
-  
-  .line {
-    width: 60px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    
-    @media (max-width: 600px) {
-      width: 30px;
-    }
-  }
-}
-
-.socials {
-  animation: fadeInUp 0.8s ease-out 0.45s both;
-}
-
-.social-btn {
-  color: rgba(255, 255, 255, 0.6);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  font-size: 0.9rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-  i {
-    font-size: 1.1rem;
-    transition: transform 0.3s ease;
-  }
-
-  &:hover {
-    color: white;
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.15);
-    transform: translateY(-2px);
-
-    i {
-      transform: scale(1.1);
-    }
-  }
-
-  &:active {
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -286,43 +65,14 @@ body {
   z-index: -1;
 }
 
-.experience-entry {
-  position: relative;
-  border-left: 2px solid #fefefe;
-  margin-left: 10px;
-  padding-left: 20px;
-}
-
-.experience-entry::before {
-  content: "";
-  position: absolute;
-  left: -1px;
-  top: 0;
-  width: 10px;
-  height: 10px;
-  background-color: #fff;
-  border: 2px solid #ffffff;
-  border-radius: 50%;
-  transform: translateX(-50%);
-}
-
-// About section
-.about-section {
-  background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.02) 50%, transparent 100%);
-}
-
-.about-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.about-title {
-  font-size: 1.75rem;
-  font-weight: 600;
-}
-
-.about-text {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.7);
+// ===== ANIMATIONS =====
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -16,16 +16,7 @@ const MainNavbar = () => {
 
   return (
     <header className={`main-navbar position-fixed top-0 start-0 end-0 py-3 ${scrolled ? 'scrolled' : ''}`}>
-      <Container className="d-flex align-items-center justify-content-between px-4">
-        <a 
-          href="#home" 
-          className="navbar-logo d-flex align-items-center gap-2 text-white text-decoration-none" 
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        >
-          <span className="logo-text fs-4 fw-bold">IV</span>
-          <span className="logo-full fs-6 fw-normal text-white-50 d-none d-sm-inline">Ian Vexler</span>
-        </a>
-
+      <Container className="d-flex align-items-center justify-content-center px-4">
         <nav className="d-flex align-items-center gap-1 gap-sm-2">
           <NavbarItem text="Home" route="#home" />
           <NavbarItem text="Journey" route="#my-journey" />

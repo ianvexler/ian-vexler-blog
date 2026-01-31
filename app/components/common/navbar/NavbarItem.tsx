@@ -10,14 +10,10 @@ const NavbarItem = ({ text, route }: NavItemProps) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (route === '#home') {
-        setIsActive(window.scrollY < 100);
-      } else {
-        const element = document.querySelector(route);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          setIsActive(rect.top <= 150 && rect.bottom >= 150);
-        }
+      const element = document.querySelector(route);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        setIsActive(rect.top <= 150 && rect.bottom >= 150);
       }
     };
 

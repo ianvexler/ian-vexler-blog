@@ -1,0 +1,85 @@
+@use '../../../styles/variables' as *;
+
+.main-navbar {
+  z-index: 1000;
+  background: rgba(10, 15, 20, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-logo {
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  .logo-text {
+    background: linear-gradient(135deg, $accent 0%, #fff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.nav-item {
+  position: relative;
+  padding: 0.5rem 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease;
+
+  @media (max-width: 480px) {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .underline {
+    position: absolute;
+    bottom: 0.3rem;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 20px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, $accent, transparent);
+    border-radius: 2px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &:hover {
+    color: white;
+
+    .underline {
+      transform: translateX(-50%) scaleX(1);
+    }
+  }
+
+  &.active {
+    color: white;
+
+    .underline {
+      transform: translateX(-50%) scaleX(1);
+      background: $accent;
+      width: 24px;
+    }
+  }
+}
+
+.navbar-cta {
+  font-size: 0.875rem;
+  color: #0a0f14;
+  background: linear-gradient(135deg, $accent 0%, #f5cc4a 100%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 12px rgba($accent, 0.3);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba($accent, 0.4);
+    color: #0a0f14;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
