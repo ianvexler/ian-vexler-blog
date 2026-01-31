@@ -2,6 +2,7 @@ import type { MetaFunction } from "@remix-run/node";
 import { Badge, Button } from "react-bootstrap";
 import ExperienceCard from "~/components/home/ExperienceCard";
 import MyJourney from "~/components/home/MyJourney";
+import Projects from "~/components/home/Projects";
 import QuickLinks from "~/components/home/QuickLinks";
 
 export const meta: MetaFunction = () => {
@@ -78,6 +79,8 @@ export default function Index() {
       </section>
 
       <MyJourney />
+
+      <Projects />
     </div>
   );
 }
