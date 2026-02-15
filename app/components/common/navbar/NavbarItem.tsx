@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { useEffect, useState } from "react";
 
 interface NavItemProps {
@@ -13,7 +14,7 @@ const NavbarItem = ({ text, route }: NavItemProps) => {
       const element = document.querySelector(route);
       if (element) {
         const rect = element.getBoundingClientRect();
-        setIsActive(rect.top <= 150 && rect.bottom >= 150);
+        setIsActive(rect.top <= 120 && rect.bottom >= 120);
       }
     };
 
@@ -33,14 +34,12 @@ const NavbarItem = ({ text, route }: NavItemProps) => {
     <a
       href={route}
       onClick={handleClick}
-      className={`relative py-2 px-4 no-underline transition-colors duration-300 ${
-        isActive
-          ? "text-white [&_.underline]:scale-x-100 [&_.underline]:bg-accent [&_.underline]:w-6"
-          : "text-white/70 hover:text-white [&:hover_.underline]:scale-x-100"
-      }`}
+      className={classNames(
+        "relative py-2 px-4 text-sm no-underline transition-colors duration-200",
+        isActive ? "text-accent font-medium" : "text-text-muted hover:text-text"
+      )}
     >
-      <span className="relative z-10">{text}</span>
-      <span className="underline absolute bottom-[0.3rem] left-1/2 -translate-x-1/2 w-5 h-0.5 bg-gradient-to-r from-transparent via-accent to-transparent rounded-full scale-x-0 origin-center transition-transform duration-300 ease-out" />
+      {text}
     </a>
   );
 };

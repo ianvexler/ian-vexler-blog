@@ -2,10 +2,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-footer border-t border-white/[0.04] py-6">
-      <div className="max-w-7xl mx-auto px-4 text-center">
-        <p className="text-sm text-white/35 m-0">
-          {currentYear} - Ian Vexler
+    <footer className="bg-surface border-t border-border py-6 mt-auto">
+      <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row justify-center items-center gap-4">
+        <p className="text-sm text-text-muted m-0 order-2 sm:order-1">
+          {currentYear} — Ian Vexler
         </p>
       </div>
     </footer>

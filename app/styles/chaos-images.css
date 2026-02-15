@@ -5,9 +5,12 @@
 
 .chaos-photo {
   position: absolute;
-  background: #0a0f14;
-  border-radius: 8px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  background: #161b22;
+  border-radius: 4px;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.4),
+    0 8px 24px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(48, 54, 61, 0.8);
 }
 
 .chaos-photo .photo-placeholder {
@@ -91,5 +94,5 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 2px;
 }

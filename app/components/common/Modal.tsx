@@ -30,19 +30,19 @@ const Modal = ({ show, onHide, title, children }: ModalProps) => {
       onClick={onHide}
     >
       <div
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
         aria-hidden="true"
       />
       <div
-        className="relative z-10 w-full max-w-4xl max-h-[90vh] overflow-auto rounded-2xl bg-card-bg border border-white/[0.08] text-white shadow-xl"
+        className="relative z-10 w-full max-w-6xl max-h-[95vh] overflow-auto rounded-xl bg-surface border border-border text-text shadow-2xl shadow-black/50"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between border-b border-white/10 px-6 pt-5 pb-4">
-          <h2 className="text-2xl font-semibold">{title}</h2>
+        <div className="flex items-center justify-between border-b border-border px-6 py-4">
+          <h2 className="text-xl font-serif text-text">{title}</h2>
           <button
             type="button"
             onClick={onHide}
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 text-white/60 hover:bg-white/10 hover:text-white transition-colors"
+            className="flex h-9 w-9 items-center justify-center rounded-lg text-text-muted hover:text-text hover:bg-surface-alt transition-colors"
             aria-label="Close"
           >
             <svg
@@ -56,7 +56,7 @@ const Modal = ({ show, onHide, title, children }: ModalProps) => {
             </svg>
           </button>
         </div>
-        <div className="px-6 pb-6 pt-2">{children}</div>
+        <div className="px-6 py-5">{children}</div>
       </div>
     </div>
   );

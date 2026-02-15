@@ -11,76 +11,76 @@ import img8 from "~/assets/images/2867640e-c7b1-4b1d-9194-086f33f5d1c2.JPG";
 
 const MyJourney = () => {
   return (
-    <section id="my-journey" className="py-12 bg-white/[0.02] border-t border-b border-white/[0.05]">
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-semibold mb-12 text-center">My Journey</h2>
+    <section id="my-journey" className="py-20 md:py-28 bg-background">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="mb-10">
+          <div className="h-px w-12 bg-accent mb-4" />
+          <h2 className="text-2xl font-serif text-text">
+            My Journey
+          </h2>
+        </div>
 
-        <div className="flex flex-col lg:flex-row gap-12">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-20">
           {/* Timeline column */}
-          <div className="flex-1 lg:max-w-[58%] lg:pr-12">
-            <div className="mb-12">
-              <h3 className="text-2xl font-semibold text-white/80 mb-6">
-                <i className="bi bi-briefcase text-accent mr-2" />
+          <div className="flex-1 lg:max-w-[52%] mr-0 xl:mr-10">
+            <div className="mb-14">
+              <h3 className="text-lg font-sans font-semibold mb-3">
                 Experience
               </h3>
 
-              <div className="relative pl-6 before:content-[''] before:absolute before:left-[5px] before:top-2 before:bottom-2 before:w-0.5 before:bg-gradient-to-b before:from-white/20 before:to-white/[0.05] before:rounded">
+              <div className="relative pl-8 before:content-[''] before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-px before:bg-border before:rounded">
                 <ExperienceCard
                   title="The Curve Consulting"
                   subtitle="Software Engineer"
-                  date="2025 - now"
-                  className="mb-6"
+                  date="Sep. 2025 — now"
+                  className="mb-8"
                 >
-                  <p className="text-white/50 mb-0">
-                    Returned to the company in a permanent role after a successful
-                    internship. Currently working on software projects across
-                    healthcare, education and industrial technology sectors,
-                    collaborating closely with teams and clients to deliver quality
-                    solutions.
+                  <p className="text-text-muted text-sm mb-0 leading-relaxed">
+                    Returned in a permanent role after a successful internship.
+                    Working on software projects across healthcare, education and
+                    industrial technology, collaborating closely with teams and
+                    clients to deliver quality solutions.
                   </p>
                 </ExperienceCard>
 
                 <ExperienceCard
                   title="The Curve Consulting"
                   subtitle="Junior Software Engineer"
-                  date="2023 - 2024"
+                  date="Jul. 2023 — Sep.2024"
                 >
-                  <p className="text-white/50 mb-0">
-                    Completed a year in industry, supporting multi-sector client
-                    projects and gaining hands-on experience in agile delivery and
-                    software development. Worked across six projects, engaging
-                    closely with clients and contributing to bespoke software
-                    solutions.
+                  <p className="text-text-muted text-sm mb-0 leading-relaxed">
+                    Year in industry supporting multi-sector client projects.
+                    Gained hands-on experience in agile delivery and software
+                    development. Worked across six projects, engaging closely
+                    with clients and contributing to bespoke software solutions.
                   </p>
                 </ExperienceCard>
               </div>
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold text-white/80 mb-6">
-                <i className="bi bi-mortarboard text-accent mr-2" />
+              <h3 className="text-lg font-sans font-semibold mb-3">
                 Education
               </h3>
 
-              <div className="relative pl-6 before:content-[''] before:absolute before:left-[5px] before:top-2 before:bottom-2 before:w-0.5 before:bg-gradient-to-b before:from-white/20 before:to-white/[0.05] before:rounded">
+              <div className="relative pl-8 before:content-[''] before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-px before:bg-border before:rounded">
                 <ExperienceCard
                   title="University of Sheffield"
                   subtitle="BEng Software Engineering w/ Year In Industry"
-                  date="2021 - 2025"
-                  className="mb-6"
+                  date="Sep. 2021 — Jun. 2025"
+                  className="mb-8"
                 >
-                  <p className="mb-2">
+                  <p className="text-text mb-2 text-sm">
                     <strong>1st Class Honours</strong>
                   </p>
-                  <p className="mb-2">
-                    <span className="text-white/50">Award: </span>
-                    Software Hut Prize — Recognized for outstanding software
+                  <p className="text-text-muted text-sm mb-2 leading-relaxed">
+                    Software Hut Prize — Recognised for outstanding software
                     development for a real-world client.
                   </p>
-                  <p className="text-white/50 mb-0">
-                    Gained a strong foundation in core software engineering
-                    principles, programming and machine learning through coursework
-                    and practical academic projects.
+                  <p className="text-text-muted text-sm mb-0 leading-relaxed">
+                    Foundation in core software engineering principles,
+                    programming and machine learning through coursework and
+                    practical projects.
                   </p>
                 </ExperienceCard>
 
@@ -89,21 +89,21 @@ const MyJourney = () => {
                   subtitle="International Foundation Year Programme"
                   date="2020"
                 >
-                  <p className="mb-2">
+                  <p className="text-text text-sm mb-2">
                     <strong>Chemistry (B), Mathematics (A*), Physics (A)</strong>
                   </p>
-                  <p className="text-white/50 mb-0">
-                    Completed an engineering foundation programme equivalent to
-                    A-Levels, developing core knowledge in engineering and
-                    mathematics to prepare for university study.
+                  <p className="text-text-muted text-sm mb-0 leading-relaxed">
+                    Engineering foundation equivalent to A-Levels, developing
+                    core knowledge in engineering and mathematics for university
+                    study.
                   </p>
                 </ExperienceCard>
               </div>
             </div>
           </div>
 
-          {/* Photo collage */}
-          <div className="hidden md:block flex-1 lg:max-w-[42%] px-6 mt-12 lg:mt-0">
+          {/* Photo collage — unchanged structure */}
+          <div className="hidden md:block flex-1 lg:max-w-[48%] min-h-[700px]">
             <div className="chaos-collage">
               <div className="chaos-photo chaos-1">
                 <img src={img1} alt="Journey photo" className="chaos-img" />

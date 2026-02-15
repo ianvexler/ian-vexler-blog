@@ -1,21 +1,25 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #0a0f14;
-  --color-accent: #e8b923;
-  --color-accent-light: #f5cc4a;
-  --color-card-bg: #10161c;
-  --color-card-bg-hover: #141c24;
-  --color-surface: #12181f;
-  --color-footer: #080b0e;
-  --font-sans: "Jost", system-ui, sans-serif;
-  --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
+  --color-background: #0d1117;
+  --color-surface: #161b22;
+  --color-surface-alt: #21262d;
+  --color-surface-elevated: #1c2128;
+  --color-accent: #d4a574;
+  --color-accent-muted: #b8956a;
+  --color-text: #e6edf3;
+  --color-text-muted: #8b949e;
+  --color-border: #30363d;
+  --color-border-subtle: #21262d;
+  --font-serif: "DM Serif Display", Georgia, serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --animate-fade-in-up: fadeInUp 0.6s ease-out forwards;
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -25,10 +29,14 @@
 
 @layer base {
   body {
-    @apply bg-background font-sans min-h-screen flex flex-col justify-between text-white pt-[70px];
+    @apply bg-background font-sans min-h-screen flex flex-col justify-between text-text pt-[64px] antialiased;
   }
 
   a {
     @apply text-inherit no-underline;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-serif);
   }
 }

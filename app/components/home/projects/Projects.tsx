@@ -10,12 +10,15 @@ const Projects = () => {
   );
 
   return (
-    <section id="projects" className="py-12 bg-white/[0.01] border-t border-white/[0.05]">
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-semibold mb-12 text-center">Projects</h2>
+    <section id="projects" className="py-20 md:py-28 bg-surface border-y border-border">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="mb-10">
+          <div className="h-px w-12 bg-accent mb-4" />
+          <h2 className="text-2xl font-serif text-text">Projects</h2>
+        </div>
 
         {featuredProjects.length > 0 && (
-          <div className="mb-12 space-y-6">
+          <div className="mb-10 space-y-6">
             {featuredProjects.map((project, idx) => (
               <div
                 key={idx}
@@ -29,7 +32,7 @@ const Projects = () => {
         )}
 
         {otherProjects.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {otherProjects.map((project, idx) => (
               <div
                 key={idx}

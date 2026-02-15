@@ -29,14 +29,14 @@ const QuickLinks = () => {
   ];
 
   return (
-    <div className="flex justify-center flex-wrap gap-2 md:gap-3 px-4 animate-fade-in-up [animation-delay:450ms] [animation-fill-mode:both]">
+    <div className="flex flex-wrap gap-3">
       {links.map((link) => (
         <a
           key={link.label}
           href={link.href}
           target={link.external ? "_blank" : undefined}
           rel={link.external ? "noopener noreferrer" : undefined}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm text-white/60 bg-white/[0.04] border border-white/[0.08] no-underline transition-all duration-300 hover:text-white hover:bg-white/[0.08] hover:border-white/[0.15] hover:-translate-y-0.5 active:translate-y-0 [&_i]:text-lg [&_i]:transition-transform [&:hover_i]:scale-110"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm text-text-muted bg-surface border border-border transition-colors duration-200 hover:text-accent hover:border-accent/50 [&_i]:text-base"
         >
           <i className={`bi ${link.icon}`} />
           <span className="hidden sm:inline">{link.label}</span>
