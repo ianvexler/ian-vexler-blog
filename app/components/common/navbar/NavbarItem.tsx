@@ -18,25 +18,29 @@ const NavbarItem = ({ text, route }: NavItemProps) => {
     };
 
     handleScroll();
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [route]);
 
   const handleClick = (e: React.MouseEvent) => {
-    if (route === '#home') {
+    if (route === "#home") {
       e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
   return (
-    <a 
-      href={route} 
+    <a
+      href={route}
       onClick={handleClick}
-      className={`nav-item position-relative text-decoration-none ${isActive ? 'active' : ''}`}
+      className={`relative py-2 px-4 no-underline transition-colors duration-300 ${
+        isActive
+          ? "text-white [&_.underline]:scale-x-100 [&_.underline]:bg-accent [&_.underline]:w-6"
+          : "text-white/70 hover:text-white [&:hover_.underline]:scale-x-100"
+      }`}
     >
-      <span className="position-relative z-1">{text}</span>
-      <span className="underline" />
+      <span className="relative z-10">{text}</span>
+      <span className="underline absolute bottom-[0.3rem] left-1/2 -translate-x-1/2 w-5 h-0.5 bg-gradient-to-r from-transparent via-accent to-transparent rounded-full scale-x-0 origin-center transition-transform duration-300 ease-out" />
     </a>
   );
 };

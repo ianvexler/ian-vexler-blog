@@ -1,31 +1,21 @@
-import { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
 import NavbarItem from "./NavbarItem";
 
 const MainNavbar = () => {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <header className={`main-navbar position-fixed top-0 start-0 end-0 py-3 ${scrolled ? 'scrolled' : ''}`}>
-      <Container className="d-flex align-items-center justify-content-center px-4">
-        <nav className="d-flex align-items-center gap-1 gap-sm-2">
+    <header className="fixed top-0 left-0 right-0 z-[1000] py-3 bg-background/95 backdrop-blur-xl border-b border-white/[0.06] shadow-[0_4px_30px_rgba(0,0,0,0.3)]">
+      <div className="max-w-7xl mx-auto flex items-center justify-center px-4">
+        <nav className="flex items-center gap-1 sm:gap-2">
           <NavbarItem text="Home" route="#home" />
           <NavbarItem text="Journey" route="#my-journey" />
           <NavbarItem text="Projects" route="#projects" />
-          <a href="mailto:contact@example.com" className="navbar-cta ms-2 ms-sm-3 px-3 py-2 rounded-pill text-decoration-none fw-medium">
+          <a
+            href="mailto:ianvexler@gmail.com"
+            className="ml-2 sm:ml-3 px-4 py-2 rounded-full text-sm font-medium text-background bg-gradient-to-br from-accent to-accent-light shadow-[0_2px_12px_rgba(232,185,35,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(232,185,35,0.4)] active:translate-y-0 no-underline"
+          >
             Get in touch
           </a>
         </nav>
-      </Container>
+      </div>
     </header>
   );
 };

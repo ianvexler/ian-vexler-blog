@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0a0f14;
+  --color-accent: #e8b923;
+  --color-accent-light: #f5cc4a;
+  --color-card-bg: #10161c;
+  --color-card-bg-hover: #141c24;
+  --color-surface: #12181f;
+  --color-footer: #080b0e;
+  --font-sans: "Jost", system-ui, sans-serif;
+  --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background font-sans min-h-screen flex flex-col justify-between text-white pt-[70px];
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+}

@@ -1,5 +1,3 @@
-import { Badge } from "react-bootstrap";
-
 interface ProjectCardProps {
   title: string;
   description: string;
@@ -9,51 +7,71 @@ interface ProjectCardProps {
   github?: string;
 }
 
-const ProjectCard = ({ 
-  title, 
-  description, 
+const ProjectCard = ({
+  title,
+  description,
   image,
   tags = [],
   link,
-  github
+  github,
 }: ProjectCardProps) => {
   return (
-    <div className="project-card-small d-flex flex-column rounded-3 overflow-hidden h-100">
-      <div className="small-card-image overflow-hidden">
+    <div className="flex flex-col rounded-xl overflow-hidden h-full bg-card-bg border border-white/[0.06] transition-all duration-300 hover:border-white/10 hover:shadow-[0_6px_24px_rgba(0,0,0,0.25)] group">
+      <div className="h-40 overflow-hidden bg-black/20">
         {image ? (
-          <img src={image} alt={title} className="small-card-img w-100 h-100 object-fit-cover d-block" />
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover block transition-transform duration-300 group-hover:scale-105"
+          />
         ) : (
-          <div className="small-card-placeholder w-100 h-100 d-flex align-items-center justify-content-center">
-            <i className="bi bi-image text-white-50 fs-3" />
+          <div className="w-full h-full flex items-center justify-center bg-white/[0.03]">
+            <i className="bi bi-image text-white/50 text-2xl" />
           </div>
         )}
       </div>
 
-      <div className="flex-grow-1 d-flex flex-column p-3 p-md-4">
-        <h4 className="fs-5 fw-semibold mb-2">{title}</h4>
-        
-        <p className="text-white-50 mb-3 flex-grow-1" style={{ fontSize: '0.9rem', lineHeight: 1.6 }}>
+      <div className="flex-grow flex flex-col p-4 md:p-5">
+        <h4 className="text-lg font-semibold mb-2">{title}</h4>
+
+        <p
+          className="text-white/50 mb-4 flex-grow text-sm"
+          style={{ lineHeight: 1.6 }}
+        >
           {description}
         </p>
 
         {tags.length > 0 && (
-          <div className="d-flex flex-wrap gap-1 mb-3">
+          <div className="flex flex-wrap gap-1 mb-4">
             {tags.map((tag) => (
-              <Badge key={tag} className="project-tag px-2 py-1 fw-normal rounded-1">
+              <span
+                key={tag}
+                className="px-2 py-1 text-xs font-normal rounded text-white/60 bg-white/[0.06]"
+              >
                 {tag}
-              </Badge>
+              </span>
             ))}
           </div>
         )}
 
-        <div className="d-flex gap-2 mt-auto">
+        <div className="flex gap-2 mt-auto">
           {link && (
-            <a href={link} target="_blank" rel="noopener noreferrer" className="small-card-link d-inline-flex align-items-center justify-content-center rounded-2 text-decoration-none">
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 inline-flex items-center justify-center rounded-lg text-white/60 bg-white/[0.04] border border-white/[0.08] no-underline transition-all duration-300 hover:text-white hover:bg-accent/10 hover:border-accent/30"
+            >
               <i className="bi bi-box-arrow-up-right" />
             </a>
           )}
           {github && (
-            <a href={github} target="_blank" rel="noopener noreferrer" className="small-card-link d-inline-flex align-items-center justify-content-center rounded-2 text-decoration-none">
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 inline-flex items-center justify-center rounded-lg text-white/60 bg-white/[0.04] border border-white/[0.08] no-underline transition-all duration-300 hover:text-white hover:bg-accent/10 hover:border-accent/30"
+            >
               <i className="bi bi-github" />
             </a>
           )}

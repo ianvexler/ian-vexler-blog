@@ -5,17 +5,23 @@ import ProjectCard from "./ProjectCard";
 import ProjectModal from "./ProjectModal";
 
 const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null);
+  const [selectedProject, setSelectedProject] = useState<ProjectData | null>(
+    null
+  );
 
   return (
-    <section id="projects" className="projects-section py-5">
-      <div className="container">
-        <h2 className="projects-title mb-5 text-center">Projects</h2>
-        
+    <section id="projects" className="py-12 bg-white/[0.01] border-t border-white/[0.05]">
+      <div className="max-w-7xl mx-auto px-4">
+        <h2 className="text-3xl font-semibold mb-12 text-center">Projects</h2>
+
         {featuredProjects.length > 0 && (
-          <div className="featured-projects mb-5">
+          <div className="mb-12 space-y-6">
             {featuredProjects.map((project, idx) => (
-              <div key={idx} onClick={() => setSelectedProject(project)} style={{ cursor: 'pointer' }}>
+              <div
+                key={idx}
+                onClick={() => setSelectedProject(project)}
+                className="cursor-pointer"
+              >
                 <FeaturedProjectCard {...project} />
               </div>
             ))}
@@ -23,10 +29,14 @@ const Projects = () => {
         )}
 
         {otherProjects.length > 0 && (
-          <div className="projects-grid">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {otherProjects.map((project, idx) => (
-              <div key={idx} onClick={() => setSelectedProject(project)} style={{ cursor: 'pointer' }}>
-                <ProjectCard 
+              <div
+                key={idx}
+                onClick={() => setSelectedProject(project)}
+                className="cursor-pointer"
+              >
+                <ProjectCard
                   title={project.title}
                   description={project.description}
                   image={project.cardImage}
@@ -40,7 +50,7 @@ const Projects = () => {
         )}
       </div>
 
-      <ProjectModal 
+      <ProjectModal
         project={selectedProject}
         show={selectedProject !== null}
         onHide={() => setSelectedProject(null)}

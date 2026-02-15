@@ -5,9 +5,9 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
-import './styles.scss';
+import "~/styles/app.css";
+import "~/styles/chaos-images.css";
 import MainNavbar from "./components/common/navbar/MainNavbar";
 import Footer from "./components/common/Footer";
 
@@ -19,7 +19,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
-        
+
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,7 +29,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body>
         <MainNavbar />
 
-        <div className="flex-grow-1">
+        <div className="flex-grow">
           {children}
         </div>
 
